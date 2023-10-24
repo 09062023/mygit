@@ -10,6 +10,7 @@ import Home from "./pages/home";
 import Info from "./pages/info";
 import Salary from "./pages/salary";
 import Mypage from "./pages/mypage";
+import Formed from "./pages/form";
 const { Header, Content, Sider } = Layout;
 // const items1 = ["1", "2", "3"].map((key) => ({
 //   key,
@@ -30,6 +31,7 @@ const items1 = [
     getItem("奖励", "/me/salary"),
     getItem("页面", "/me/myspage", [getItem("具体", "/me/myspage/mypage")]),
   ]),
+  getItem("表格", "/form"),
 ];
 const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
   (icon, index) => {
@@ -109,6 +111,7 @@ const App = () => {
                   <Route path="/me/myspage/mypage" element={<Mypage />} />
                 </Route>
               </Route>
+              <Route path="/form" element={<Formed />} />
             </Routes>
           </Content>
         </Layout>
