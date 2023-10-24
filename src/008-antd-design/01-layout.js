@@ -11,6 +11,7 @@ import Info from "./pages/info";
 import Salary from "./pages/salary";
 import Mypage from "./pages/mypage";
 import Formed from "./pages/form";
+import Tabled from "./pages/table";
 const { Header, Content, Sider } = Layout;
 // const items1 = ["1", "2", "3"].map((key) => ({
 //   key,
@@ -32,6 +33,7 @@ const items1 = [
     getItem("页面", "/me/myspage", [getItem("具体", "/me/myspage/mypage")]),
   ]),
   getItem("表格", "/form"),
+  getItem("表单", "/table"),
 ];
 const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
   (icon, index) => {
@@ -112,6 +114,7 @@ const App = () => {
                 </Route>
               </Route>
               <Route path="/form" element={<Formed />} />
+              <Route path="/table" element={<Tabled />} />
             </Routes>
           </Content>
         </Layout>
