@@ -1,11 +1,6 @@
-import {
-  LaptopOutlined,
-  NotificationOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
 import React from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Home from "./pages/home";
 import Info from "./pages/info";
 import Salary from "./pages/salary";
@@ -37,23 +32,13 @@ const items1 = [
   getItem("表单", "/table"),
   getItem("表格-1", "/table-1"),
 ];
-const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
-  (icon, index) => {
-    const key = String(index + 1);
-    return {
-      key: `sub${key}`,
-      icon: React.createElement(icon),
-      label: `subnav ${key}`,
-      children: new Array(4).fill(null).map((_, j) => {
-        const subKey = index * 4 + j + 1;
-        return {
-          key: subKey,
-          label: `option${subKey}`,
-        };
-      }),
-    };
-  }
-);
+const items2 = [
+  getItem("姓名1", "/home"),
+  getItem("个人信息1", "/info"),
+  getItem("表格1", "/form"),
+  getItem("表单1", "/table"),
+  getItem("表格-1 1", "/table-1"),
+];
 const App = () => {
   const navigate = useNavigate();
   const onClick = (e) => {
@@ -82,6 +67,7 @@ const App = () => {
               borderRight: 0,
             }}
             items={items2}
+            onClick={onClick}
           />
         </Sider>
         <Layout
@@ -109,7 +95,7 @@ const App = () => {
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/info" element={<Info />} />
-              <Route path="/me">
+              <Route path="/me" element={<Navigate to={"/home"} />}>
                 <Route path="/me/salary" element={<Salary />} />
                 <Route path="/me/myspage">
                   <Route path="/me/myspage/mypage" element={<Mypage />} />
