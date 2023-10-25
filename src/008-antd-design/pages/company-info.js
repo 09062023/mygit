@@ -164,7 +164,10 @@ const CompanyInfo = () => {
   };
   return (
     <>
-      <EChartsReact option={option} style={{ height: "500px" }} />
+      <EChartsReact
+        option={option}
+        style={{ height: "500px", width: "800px" }}
+      />
     </>
   );
 };
