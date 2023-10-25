@@ -14,6 +14,13 @@ const StaffSa = () => {
       >
         点击我
       </Button>
+      <Button
+        onClick={() => {
+          console.log("haha");
+        }}
+      >
+        haha
+      </Button>
     </>
   );
 };
