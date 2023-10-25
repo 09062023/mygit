@@ -1,6 +1,6 @@
 import { Breadcrumb, Layout, Menu } from "antd";
 import React from "react";
-import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./pages/home";
 import Info from "./pages/info";
 import Salary from "./pages/salary";
@@ -101,7 +101,7 @@ const App = () => {
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/info" element={<Info />} />
-              <Route path="/me" element={<Navigate to={"/home"} />}>
+              <Route path="/me">
                 <Route path="/me/salary" element={<Salary />} />
                 <Route path="/me/myspage">
                   <Route path="/me/myspage/mypage" element={<Mypage />} />

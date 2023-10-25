@@ -10,19 +10,19 @@ const CompanyInfo = () => {
     },
     {
       name: "人事",
-      value: 0.23,
+      value: 0.18,
     },
     {
       name: "it",
-      value: 0.34,
+      value: 0.44,
     },
     {
       name: "测试",
-      value: 0.45,
+      value: 0.16,
     },
     {
       name: "后勤",
-      value: 0.73,
+      value: 0.1,
     },
   ];
 
@@ -80,7 +80,7 @@ const CompanyInfo = () => {
         show: false,
       },
       splitArea: {
-        show: false,
+        show: true,
       },
     },
     radiusAxis: {
