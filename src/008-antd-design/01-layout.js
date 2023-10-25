@@ -8,11 +8,17 @@ import Mypage from "./pages/mypage";
 import Formed from "./pages/form";
 import Tabled from "./pages/table";
 import Tabledd from "./pages/table-1";
+import Staff from "./pages/staff";
+import CompanyInfo from "./pages/company-info";
+import Tipwater from "./pages/tipwater";
+import "./layout.css";
+import StaffSa from "./pages/staff-salary";
 const { Header, Content, Sider } = Layout;
 // const items1 = ["1", "2", "3"].map((key) => ({
 //   key,
 //   label: `nav ${key}`,
 // }));
+
 const getItem = (label, key, children, type) => {
   return {
     key,
@@ -33,11 +39,11 @@ const items1 = [
   getItem("表格-1", "/table-1"),
 ];
 const items2 = [
-  getItem("姓名1", "/home"),
-  getItem("个人信息1", "/info"),
-  getItem("表格1", "/form"),
-  getItem("表单1", "/table"),
-  getItem("表格-1 1", "/table-1"),
+  getItem("模仿员工信息", "/staff"),
+  getItem("模仿公司信息", "/company-info"),
+  getItem("模仿公司业务", "/form"),
+  getItem("模仿公司流水", "/tipwater"),
+  getItem("模仿员工工资", "/staff-salary"),
 ];
 const App = () => {
   const navigate = useNavigate();
@@ -104,6 +110,10 @@ const App = () => {
               <Route path="/form" element={<Formed />} />
               <Route path="/table" element={<Tabled />} />
               <Route path="/table-1" element={<Tabledd />} />
+              <Route path="/staff" element={<Staff />} />
+              <Route path="/company-info" element={<CompanyInfo />} />
+              <Route path="/tipwater" element={<Tipwater />} />
+              <Route path="/staff-salary" element={<StaffSa />} />
             </Routes>
           </Content>
         </Layout>
